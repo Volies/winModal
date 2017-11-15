@@ -1,0 +1,51 @@
+.modal-wrap {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+.modal {
+	box-sizing: border-box;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	padding: 40px;
+	max-width: 1200px;
+	min-width: 320px;
+	max-height: 90%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	transform: translate(-50%,-50%);
+	&-close {
+		cursor: pointer;
+		position: absolute;
+		display: block;
+		width: 30px;
+		height: 30px;
+		background-color: #333;
+		top: 0;
+		right: 0;
+		transition: all .3s;
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			display: block;
+			width: 15px;
+			height: 3px;
+			background-color: #ddd;
+			transform-origin: 0 0;
+		}
+		&:before {
+			transform: rotate(45deg) translate(-50%,-50%);
+		}
+		&:after {
+			transform: rotate(-45deg) translate(-50%,-50%);
+		}
+	}
+}
